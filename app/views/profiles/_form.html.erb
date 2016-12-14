@@ -1,0 +1,24 @@
+<%= bootstrap_form_for(@profile) do |f| %>  
+
+  
+
+    <%= f.text_field :first_name, label: 'Primer nombre' %>
+    <%= f.text_field :second_name, label: 'Segundo nombre' %>
+    <%= f.text_field :first_last_name, label: 'Apellido paterno' %>
+    <%= f.text_field :second_last_name, label: 'Apellido materno' %>
+    <%= f.date_select :birth_date, label: 'Fecha de nacimiento', start_year: 1950 %>  
+    <%= f.text_field :curp %>  
+    <%= f.text_field :rfc %>  
+
+    <!-- Gender section -->
+    <%= f.form_group :gender, label: {text: 'Sexo'} do %>
+      <%= f.radio_button :gender, 'Hombre', label: 'Hombre', checked: true%>  
+      <%= f.radio_button :gender, 'Mujer', label: 'Mujer' %>        
+    <% end %>
+
+    <%= f.text_field :birth_state, label: 'Lugar de nacimiento' %>  
+    <%= f.text_field :phone_number, label: 'Teléfono' %>
+    
+    <%= f.submit %>
+  
+<% end %>

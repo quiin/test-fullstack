@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Requisitions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Income</th>
+      <th>Address years</th>
+      <th>Company years</th>
+      <th>Marital status</th>
+      <th>Requested amount</th>
+      <th>Payment terms</th>
+      <th>Bank</th>
+      <th>Comment</th>
+      <th>Company name</th>
+      <th>Company phone number</th>
+      <th>Dependents number</th>
+      <th>Company position</th>
+      <th>Has sgmm</th>
+      <th>Has imss</th>
+      <th>Has car</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requisitions.each do |requisition| %>
+      <tr>
+        <td><%= requisition.income %></td>
+        <td><%= requisition.address_years %></td>
+        <td><%= requisition.company_years %></td>
+        <td><%= requisition.marital_status %></td>
+        <td><%= requisition.requested_amount %></td>
+        <td><%= requisition.payment_terms %></td>
+        <td><%= requisition.bank %></td>
+        <td><%= requisition.comment %></td>
+        <td><%= requisition.company_name %></td>
+        <td><%= requisition.company_phone_number %></td>
+        <td><%= requisition.dependents_number %></td>
+        <td><%= requisition.company_position %></td>
+        <td><%= requisition.has_sgmm %></td>
+        <td><%= requisition.has_imss %></td>
+        <td><%= requisition.has_car %></td>
+        <td><%= link_to 'Show', requisition %></td>
+        <td><%= link_to 'Edit', edit_requisition_path(requisition) %></td>
+        <td><%= link_to 'Destroy', requisition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Requisition', new_requisition_path %>

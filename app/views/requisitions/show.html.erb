@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Income:</strong>
+  <%= @requisition.income %>
+</p>
+
+<p>
+  <strong>Address years:</strong>
+  <%= @requisition.address_years %>
+</p>
+
+<p>
+  <strong>Company years:</strong>
+  <%= @requisition.company_years %>
+</p>
+
+<p>
+  <strong>Marital status:</strong>
+  <%= @requisition.marital_status %>
+</p>
+
+<p>
+  <strong>Requested amount:</strong>
+  <%= @requisition.requested_amount %>
+</p>
+
+<p>
+  <strong>Payment terms:</strong>
+  <%= @requisition.payment_terms %>
+</p>
+
+<p>
+  <strong>Bank:</strong>
+  <%= @requisition.bank %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @requisition.comment %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @requisition.company_name %>
+</p>
+
+<p>
+  <strong>Company phone number:</strong>
+  <%= @requisition.company_phone_number %>
+</p>
+
+<p>
+  <strong>Dependents number:</strong>
+  <%= @requisition.dependents_number %>
+</p>
+
+<p>
+  <strong>Company position:</strong>
+  <%= @requisition.company_position %>
+</p>
+
+<p>
+  <strong>Has sgmm:</strong>
+  <%= @requisition.has_sgmm %>
+</p>
+
+<p>
+  <strong>Has imss:</strong>
+  <%= @requisition.has_imss %>
+</p>
+
+<p>
+  <strong>Has car:</strong>
+  <%= @requisition.has_car %>
+</p>
+
+<%= link_to 'Edit', edit_requisition_path(@requisition) %> |
+<%= link_to 'Back', requisitions_path %>
