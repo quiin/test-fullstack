@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  income: 1.5
+  address_years: 1
+  company_years: 1
+  marital_status: MyString
+  requested_amount: 1.5
+  payment_terms: MyString
+  bank: MyString
+  comment: MyText
+  company_name: MyString
+  company_phone_number: MyString
+  dependents_number: MyString
+  company_position: MyString
+  has_sgmm: false
+  has_imss: false
+  has_car: false
+
+two:
+  income: 1.5
+  address_years: 1
+  company_years: 1
+  marital_status: MyString
+  requested_amount: 1.5
+  payment_terms: MyString
+  bank: MyString
+  comment: MyText
+  company_name: MyString
+  company_phone_number: MyString
+  dependents_number: MyString
+  company_position: MyString
+  has_sgmm: false
+  has_imss: false
+  has_car: false

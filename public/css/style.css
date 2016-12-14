@@ -1,0 +1,173 @@
+body{
+	background-color: #FAFAFA;
+}
+h1{
+	text-align: center;
+	color: #c0392b;
+	margin-bottom: 20px;
+	border-bottom: solid 2px #2c3e50;
+	padding: 7px;
+
+}
+
+.logo{
+	margin-right: 4px;
+  width: 150px;
+  height: 80px;
+
+}
+
+h2{
+	border-bottom: solid 1px #CCC;
+	margin-bottom: 10px;
+	margin-top: 1px;
+	color: #16a085;
+}
+
+.simple-box{
+	background-color: #FFF;
+	padding: 15px;
+	border: solid 1px #95a5a6;
+	margin-bottom: 10px;
+	-webkit-box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
+-moz-box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
+box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
+	
+}
+
+.blue-b{
+	border-top: solid 4px #2980b9;
+}
+
+.green-b{
+	border-top: solid 4px #27ae60;
+}
+
+.orange-b{
+	border-top: solid 4px #f39c12;
+}
+
+.red-b{
+  border-top: solid 4px #e74c3c;
+}
+
+.edit-link{
+
+	color: #27ae60;
+}
+
+.delete-link{
+	color: #c0392b;
+}
+
+.show-link{
+	color:#2980b9;
+}
+
+.back-link{
+	margin-bottom: 5px;
+	color: #3498db;
+}
+
+.navbar-default {
+  background-color: #01ae76;
+  border-color: #27ae60;
+  border-bottom: solid 5px #f1c40f;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {01ae76
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #f1c40f;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #f1c40f;
+  background-color: #27ae60;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #f1c40f;
+  background-color: #27ae60;
+}
+.navbar-default .navbar-toggle {
+  border-color: #27ae60;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #27ae60;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #f1c40f;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #f1c40f;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #f1c40f;
+    background-color: #27ae60;
+  }
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+}
+
+#myTable tr.header, #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
