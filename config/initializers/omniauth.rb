@@ -1,4 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook, ENV["YTP_FACEBOOK_ID"], ENV["YTP_FACEBOOK_SECRET"],
-  scope: 'email,public_profile', display: 'popup'
+  scope: 'email,public_profile,user_birthday,user_hometown', 
+  display: 'popup', 
+  info_fields: 'email,birthday,age_range,gender,first_name,middle_name,last_name,locale,hometown'
 end

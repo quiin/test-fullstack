@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
 
-	def create
-		profile = Profile.from_omniauth(env["omniauth.auth"])		
+	def create		
+		profile = Profile.from_omniauth(request.env['omniauth.auth'])		
 		session[:profile_id] = profile.id
 		redirect_to root_path
 	end
 
 	def destroy
-		session[:profile_id] = nil
-		redirect_to root_path
+		reset_session
+		redirect_to root_path, notice: 'Sesión terminada'
 	end
 
 	def index

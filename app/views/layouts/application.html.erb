@@ -31,11 +31,12 @@
           </ul>
            <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
-              <li><a><%= current_profile.name %></a></li>
+              <li><%= link_to(current_profile.first_name, current_profile) %></li>
               <li><%= link_to("Cerrar sesión", signout_path, id: 'sign_out')%></li>
             <% else %>
               <li>
                 <%= link_to("Iniciar Sesión con Facebook", '/auth/facebook' , id: 'sign_in') %>
+                <%#= link_to("Iniciar Sesión con Facebook",  , id: 'sign_in') %>
               </li>
             <% end %>
           </ul>
