@@ -7,7 +7,10 @@ h1{
 	margin-bottom: 20px;
 	border-bottom: solid 2px #2c3e50;
 	padding: 7px;
+}
 
+.personal-info i{
+    padding: 5px;
 }
 
 .logo{
@@ -30,13 +33,17 @@ h2{
 	border: solid 1px #95a5a6;
 	margin-bottom: 10px;
 	-webkit-box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
--moz-box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
-box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
+  -moz-box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
+  box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
 	
 }
 
 .blue-b{
 	border-top: solid 4px #2980b9;
+}
+
+.blue-b h2{
+  color: #2980b9;
 }
 
 .green-b{
@@ -47,14 +54,25 @@ box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
 	border-top: solid 4px #f39c12;
 }
 
+.orange-b h2{
+  color: #f39c12;
+}
+
 .red-b{
   border-top: solid 4px #e74c3c;
 }
 
-.edit-link{
-
-	color: #27ae60;
+.red-b h2{
+  color: #e74c3c;
 }
+
+.edit-link:hover, :link, :visited{
+  padding-left: 20px;
+  font-size: 20px;
+	color: #27ae60;
+  text-decoration: none;
+}
+
 
 .delete-link{
 	color: #c0392b;

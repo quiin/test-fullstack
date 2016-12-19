@@ -1,3 +1,3 @@
 class PersonalReference < ActiveRecord::Base
-	belongs_to :profile
+	belongs_to :requisition
 end

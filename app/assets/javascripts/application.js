@@ -11,8 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+//= require maskedinput
 //= require bootstrap-sprockets
+//= require curp
+//= require autonumeric
+//= require turbolinks
 //= require_tree .
 

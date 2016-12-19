@@ -4,7 +4,7 @@
 	  <title>TestYotepresto</title>
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= stylesheet_link_tag '/css/style'%>
-	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>    
 	  <%= csrf_meta_tags %>
 	</head>
 	
@@ -32,6 +32,7 @@
            <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
               <li><%= link_to(current_profile.first_name, current_profile) %></li>
+              <li><%= link_to(t(:new_requisition), new_profile_requisition_path(current_profile)) %></li>
               <li><%= link_to("Cerrar sesión", signout_path, id: 'sign_out')%></li>
             <% else %>
               <li>
@@ -72,5 +73,5 @@
 		  <%= yield %>
       
     </div>
-	</body>
+	</body>  
 </html>

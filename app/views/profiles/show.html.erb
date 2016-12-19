@@ -1,54 +1,106 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    
+    <!-- profile info -->
+    <div class="col-xs-12 col-md-6 personal-info">
+      <div class="simple-box blue-b">
+        <h2>
+          <%= t(:personal_info) %>
+          <span class="pull-right">
+            <%= link_to(edit_profile_path(@profile), class: 'edit-link') do%>
+              <i class="glyphicon glyphicon-pencil"></i>
+              <%= t(:edit) %>
+            <% end %>
+          </span>
+        </h2>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <img src="http://placehold.it/380x200" alt="" class="img-rounded img-responsive" />
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <h4>
+              <%= @profile.full_name %>
+              <i class="glyphicon glyphicon-icon-woman"></i>                
+            </h4>
+            <small>
+              <cite>
+                <%= @profile.birth_state %>, MEX
+                <i class="glyphicon glyphicon-map-marker"></i>
+              </cite>
+            </small>
+            <p>              
+              <i class="glyphicon glyphicon-envelope"></i>                
+              <%= @profile.email? ? @profile.email : 'n/a' %>
+              <br>              
+              <i class="glyphicon glyphicon-phone"></i>
+              <%= @profile.phone_number? ? @profile.phone_number : 'n/a' %>
+              <br>
+              <i class="glyphicon glyphicon-gift"></i>
+              <%= @profile.birth_date? ? l(@profile.birth_date, format: "%d %B %Y") : 'n/a' %>
+              <br>
+              <i class="glyphicon glyphicon-user"></i>
+              <%= t(@profile.gender) %>
+              <br>
+              <i class="glyphicon glyphicon-link"></i>
+              <%= @profile.curp? ? @profile.curp : 'n/a' %>
+              <br>
+              <i class="glyphicon glyphicon-briefcase"></i>
+              <%= @profile.rfc? ? @profile.rfc : 'n/a' %>
+              <br>
+              <% if @profile.is_complete? %>
+                <span class="text-success">
+                  <i class="glyphicon glyphicon-ok"></i>
+                  <%= t(:profile_complete) %>
+                </span>                
+              <% else %>
+                <span class="text-warning">
+                  <i class="glyphicon glyphicon-warning-sign"></i>
+                  <%= link_to(edit_profile_path(@profile), class: 'text-warning') do%>
+                    <%= t(:profile_incomplete) %>
+                  <% end %>
+                </span>                
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>  
 
-<p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
-</p>
+    <!-- Requisitions -->
+    <div class="col-xs-12 col-md-6">
+      <div class="simple-box red-b">
+        <h2><%= t(:requisitions) %></h2>
+        <% if @profile.requisitions.any? %>
+          <div class="table-responsive">
+            <table class="table table-stripped table-condensed">
+              
+              <thead>
+                <th><%= trans(:requisition, :requested_amount) %></th>
+                <th><%= trans(:requisition, :payment_terms) %></th>
+                <th><%= trans(:requisition, :bank) %></th>
+              </thead>
 
-<p>
-  <strong>Second name:</strong>
-  <%= @profile.second_name %>
-</p>
+              <tbody>
+                <% @profile.requisitions.each do |requisition| %>
+                  <tr>
+                    <td><%= number_to_currency(requisition.requested_amount) %></td>
+                    <td><%= requisition.payment_terms %></td>
+                    <td><%= requisition.bank %></td>
+                  </tr>
+                <% end %>
+              </tbody>
 
-<p>
-  <strong>First last name:</strong>
-  <%= @profile.first_last_name %>
-</p>
+            </table>        
+          </div>
+        <% else %>
+          <div class="text-center">
+            <h3>
+              <%= t(:no_requisitions) %>
+            </h3>
+          </div>
+        <% end %>        
+      </div>
+    </div>
 
-<p>
-  <strong>Second last name:</strong>
-  <%= @profile.second_last_name %>
-</p>
-
-<p>
-  <strong>Birth date:</strong>
-  <%= @profile.birth_date %>
-</p>
-
-<p>
-  <strong>Curp:</strong>
-  <%= @profile.curp %>
-</p>
-
-<p>
-  <strong>Rfc:</strong>
-  <%= @profile.rfc %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @profile.gender %>
-</p>
-
-<p>
-  <strong>Birth state:</strong>
-  <%= @profile.birth_state %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @profile.phone_number %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+  </div>
+</div>

@@ -1,24 +1,23 @@
 <%= bootstrap_form_for(@profile) do |f| %>  
 
+  <%= f.text_field :first_name, placeholder: 'Ricardo', id: :first_name%>
+  <%= f.text_field :second_name, placeholder: 'Emanuel', id: :second_name%>
+  <%= f.text_field :first_last_name, placeholder: 'Nieves', id: :first_last_name%>
+  <%= f.text_field :second_last_name, placeholder: 'Reyes', id: :second_last_name%>
+  <%= f.date_select :birth_date, start_year: 1950, use_month_numbers: true, prompt: true, id: :birth_date %>
+  <%= f.text_field :curp, placeholder: 'BADD110313HCMLNS09', id: :curp%>
+  <%= f.text_field :rfc, placeholder:  'CUPU800825569', id: :rfc%>
+  <%= f.email_field :email, placeholder: 'ricardo.nieves@ejemplo.com', id: :email%>
+
+  <!-- Gender section -->
+  <%= f.form_group :gender, label: {text: t(:"activerecord.models.profile")} do %>
+    <%= f.radio_button :gender, :male, label: t(:male)%>  
+    <%= f.radio_button :gender, :female, label: t(:female)%>
+  <% end %>
+
+  <%= f.select :birth_state, Profile::STATES,{include_blank: trans(:profile, :birth_state)}, id: :birth_state, prompt: :true %>  
+  <%= f.text_field :phone_number, data: {role: 'phone'}%>
   
-
-    <%= f.text_field :first_name, label: 'Primer nombre' %>
-    <%= f.text_field :second_name, label: 'Segundo nombre' %>
-    <%= f.text_field :first_last_name, label: 'Apellido paterno' %>
-    <%= f.text_field :second_last_name, label: 'Apellido materno' %>
-    <%= f.date_select :birth_date, label: 'Fecha de nacimiento', start_year: 1950 %>  
-    <%= f.text_field :curp %>  
-    <%= f.text_field :rfc %>  
-
-    <!-- Gender section -->
-    <%= f.form_group :gender, label: {text: 'Sexo'} do %>
-      <%= f.radio_button :gender, 'Hombre', label: 'Hombre', checked: true%>  
-      <%= f.radio_button :gender, 'Mujer', label: 'Mujer' %>        
-    <% end %>
-
-    <%= f.text_field :birth_state, label: 'Lugar de nacimiento' %>  
-    <%= f.text_field :phone_number, label: 'Teléfono' %>
-    
-    <%= f.submit %>
+  <%= f.submit %>
   
 <% end %>

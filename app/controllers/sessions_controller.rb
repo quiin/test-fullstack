@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
 		redirect_to root_path, notice: 'Sesión terminada'
 	end
 
-	def index
-		
+	def index		
 	end
 
 end

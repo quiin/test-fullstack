@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214080739) do
+ActiveRecord::Schema.define(version: 20161214075905) do
 
   create_table "personal_references", force: :cascade do |t|
     t.string   "first_name"
@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20161214080739) do
     t.string   "first_last_name"
     t.string   "second_last_name"
     t.string   "cell_phone_number"
+    t.integer  "requisition_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "profile_id"
   end
 
-  add_index "personal_references", ["profile_id"], name: "index_personal_references_on_profile_id"
+  add_index "personal_references", ["requisition_id"], name: "index_personal_references_on_requisition_id"
 
   create_table "profiles", force: :cascade do |t|
     t.string   "provider"
@@ -47,24 +47,24 @@ ActiveRecord::Schema.define(version: 20161214080739) do
   end
 
   create_table "requisitions", force: :cascade do |t|
-    t.float    "income"
+    t.integer  "income_cents"
     t.integer  "address_years"
-    t.integer  "company_years"
     t.string   "marital_status"
-    t.float    "requested_amount"
-    t.string   "payment_terms"
-    t.string   "bank"
-    t.text     "comment"
-    t.string   "company_name"
-    t.string   "company_phone_number"
     t.string   "dependents_number"
-    t.string   "company_position"
     t.boolean  "has_sgmm"
     t.boolean  "has_imss"
     t.boolean  "has_car"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "company_years"
+    t.string   "company_name"
+    t.string   "company_phone_number"
+    t.string   "company_position"
+    t.integer  "requested_amount_cents"
+    t.string   "payment_terms"
+    t.string   "bank"
+    t.text     "comment"
     t.integer  "profile_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "requisitions", ["profile_id"], name: "index_requisitions_on_profile_id"
