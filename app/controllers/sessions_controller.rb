@@ -15,8 +15,7 @@ class SessionsController < ApplicationController
 		
 		if auth #facebook login			
 			profile = Profile.from_omniauth(auth)
-		else #form login
-			ap params[:profile][:email]
+		else #form login			
 			email = params[:profile][:email]
 			profile = Profile.find_by(email: email)
 		end
