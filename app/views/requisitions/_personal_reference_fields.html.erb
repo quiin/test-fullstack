@@ -1,0 +1,9 @@
+<div class="col-xs-12 col-md-4 well fields-to-remove">
+  <a class="close-thik edit-link remove-link"></a>   
+	<%= f.text_field :first_name %>  
+	<%= f.text_field :second_name %>
+	<%= f.text_field :first_last_name %>
+	<%= f.text_field :second_last_name %>
+	<%= f.text_field :cell_phone_number, data: {role: 'phone'} %> 
+	<%= f.hidden_field :_destroy , class: 'remove-hidden'%>
+</div>

@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20161214075905) do
     t.string   "gender"
     t.string   "birth_state"
     t.string   "phone_number"
+    t.string   "avatar_url"
+    t.string   "password_digest"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

@@ -20,6 +20,8 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :gender
       t.string :birth_state
       t.string :phone_number
+      t.string :avatar_url
+      t.string :password_digest
 
       t.timestamps null: false
     end

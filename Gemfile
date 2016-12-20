@@ -33,7 +33,7 @@ gem 'autonumeric-rails'
 #Money-rails
 gem 'monetize'
 gem 'money-rails'
-
+gem "nested_form"
 #Masked input
 gem 'maskedinput-rails'
 
@@ -41,6 +41,8 @@ gem 'maskedinput-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'bootstrap_form'
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
 
 #Internationalization
 gem 'rails-i18n', '~> 4.0.0'
@@ -49,7 +51,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'awesome_print'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

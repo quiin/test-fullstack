@@ -8,10 +8,12 @@ profile.second_name = 'Paco'
 profile.first_last_name = 'De la mar'
 profile.second_last_name = 'Jiménez'
 profile.birth_date = Date.new(1994, 5, 21)
-profile.curp = ""
-profile.rfc = ""
+profile.curp = "BADD110313HCMLNS09"
+profile.rfc = "CUPU800825569"
 profile.gender = "male"
 profile.birth_state = "DF"
-profile.phone_number = "5553525002"
+profile.phone_number = "5512345678"
+profile.email = "admin@admin.com"
+profile.password = "password"
 
 profile.save!(validate: false)

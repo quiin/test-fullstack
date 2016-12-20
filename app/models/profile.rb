@@ -1,9 +1,10 @@
 class Profile < ActiveRecord::Base
-  has_many :requisitions
+  has_many :requisitions, dependent: :destroy
+  has_secure_password
   validates :first_name, :first_last_name, :rfc, :curp, :second_last_name, :email, :birth_date, :gender, :birth_state, :phone_number, presence: true
   validates :rfc, format: { with: /\A[A-ZÑ&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9]([A-Z0-9]{3})?\z/i, message: :invalid_rfc }
   validates :curp, format: { with: /\A[A-Z][AEIOUX][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][MH][A-Z][BCDFGHJKLMNÑPQRSTVWXYZ]{4}[0-9A-Z][0-9]\z/, message: :invalid_curp }
-
+  before_save :set_defaults
 
   STATES = ["Aguascalientes", "Baja California", "Baja California Sur", "Campeche", 
     "Chiapas", "Chihuahua", "Coahuila", "Colima", "Distrito Federal", "Durango", 
@@ -12,8 +13,10 @@ class Profile < ActiveRecord::Base
     "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", 
     "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas", "Extranjero"]
 
+  DEFAULT_URL = "https://www.kirkleescollege.ac.uk/wp-content/uploads/2015/09/default-avatar.png"
+
   #Called on oauth login/registration
-  def self.from_omniauth(auth)		    
+  def self.from_omniauth(auth)		       
     provider = auth.provider
 		uid = auth.uid        
     profile = where(provider: provider, uid: uid).first_or_initialize    
@@ -28,8 +31,10 @@ class Profile < ActiveRecord::Base
     profile.first_last_name = auth.extra.raw_info.last_name      
     profile.birth_date = Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y') if auth.extra.raw_info.birthday
     profile.gender = auth.extra.raw_info.gender
-    profile.email = auth.extra.raw_info.email    
+    profile.email = auth.extra.raw_info.email
+    profile.avatar_url = auth.info.image
     profile.save!(validate: false)
+    ap profile
     profile
   end
 
@@ -48,7 +53,11 @@ class Profile < ActiveRecord::Base
     gender? and
     birth_state? and
     phone_number?
-  end  
+  end
+
+  def set_defaults
+    self.avatar_url ||= Profile::DEFAULT_URL
+  end
   
 
 end

@@ -1,79 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <!-- personal info -->
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="simple-box red-b">
+      <h2><%= t(:personal_info) %></h2>
+      <p><%= trans(:requisition, :income ) %>: <%= number_to_currency(@requisition.income) %></p>
+      <p><%= trans(:requisition, :address_years ) %>: <%= @requisition.address_years %></p>
+      <p><%= trans(:requisition, :marital_status ) %>: <%= @requisition.marital_status %></p>
+      <p><%= trans(:requisition, :dependents_number ) %>: <%= @requisition.dependents_number %></p>
+      <p><%= trans(:requisition, :has_sgmm ) %>: <%= @requisition.has_sgmm %></p>
+      <p><%= trans(:requisition, :has_imss ) %>: <%= @requisition.has_imss %></p>
+      <p><%= trans(:requisition, :has_car ) %>: <%= @requisition.has_car %></p>
+    </div>
+  </div>
+  
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="simple-box blue-b">
+      <h2><%= t(:work_info) %></h2>
+      <p><%= trans(:requisition, :company_years ) %>: <%= @requisition.company_years %></p>
+      <p><%= trans(:requisition, :company_name ) %>: <%= @requisition.company_name %></p>
+      <p><%= trans(:requisition, :company_phone_number ) %>: <%= @requisition.company_phone_number %></p>
+      <p><%= trans(:requisition, :company_position ) %>: <%= @requisition.company_position %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Income:</strong>
-  <%= @requisition.income %>
-</p>
+  <div class="col-xs-12 col-sm-12 col-md-4">
+    <div class="simple-box orane-b">
+      <h2><%= t(:requisition) %></h2>
+      <p><%= trans(:requisition, :requested_amount) %>: <%= number_to_currency(@requisition.requested_amount) %> </p>
+      <p><%= trans(:requisition, :payment_terms) %>: <%= @requisition.payment_terms %> </p>
+      <p><%= trans(:requisition, :bank) %>: <%= @requisition.bank %> </p>
+      <p><%= trans(:requisition, :comment) %>: <%= @requisition.comment %> </p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Address years:</strong>
-  <%= @requisition.address_years %>
-</p>
-
-<p>
-  <strong>Company years:</strong>
-  <%= @requisition.company_years %>
-</p>
-
-<p>
-  <strong>Marital status:</strong>
-  <%= @requisition.marital_status %>
-</p>
-
-<p>
-  <strong>Requested amount:</strong>
-  <%= @requisition.requested_amount %>
-</p>
-
-<p>
-  <strong>Payment terms:</strong>
-  <%= @requisition.payment_terms %>
-</p>
-
-<p>
-  <strong>Bank:</strong>
-  <%= @requisition.bank %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @requisition.comment %>
-</p>
-
-<p>
-  <strong>Company name:</strong>
-  <%= @requisition.company_name %>
-</p>
-
-<p>
-  <strong>Company phone number:</strong>
-  <%= @requisition.company_phone_number %>
-</p>
-
-<p>
-  <strong>Dependents number:</strong>
-  <%= @requisition.dependents_number %>
-</p>
-
-<p>
-  <strong>Company position:</strong>
-  <%= @requisition.company_position %>
-</p>
-
-<p>
-  <strong>Has sgmm:</strong>
-  <%= @requisition.has_sgmm %>
-</p>
-
-<p>
-  <strong>Has imss:</strong>
-  <%= @requisition.has_imss %>
-</p>
-
-<p>
-  <strong>Has car:</strong>
-  <%= @requisition.has_car %>
-</p>
-
-<%= link_to 'Edit', edit_requisition_path(@requisition) %> |
-<%= link_to 'Back', requisitions_path %>
+<h2>Referencias</h2>
+  <ul>
+    <% @requisition.personal_references.each do |r| %>
+      <div class="col-xs-12 col-md-4 well fields-to-remove">        
+        <li><%= trans(:personal_reference, :first_name) %>: <%= r.first_name %></li>
+        <li><%= trans(:personal_reference, :second_name) %>: <%= r.second_name %></li>
+        <li><%= trans(:personal_reference, :first_last_name) %>: <%= r.first_last_name %></li>
+        <li><%= trans(:personal_reference, :second_last_name) %>: <%= r.second_last_name %></li>
+        <li><%= trans(:personal_reference, :cell_phone_number) %>: <%= r.cell_phone_number %></li>
+      </div>
+    <% end %> 
+  </ul>

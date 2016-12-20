@@ -26,8 +26,7 @@
 
         <!-- Navbar content -->
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Ordenes</a></li>
+          <ul class="nav navbar-nav">            
           </ul>
            <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
@@ -36,8 +35,8 @@
               <li><%= link_to("Cerrar sesión", signout_path, id: 'sign_out')%></li>
             <% else %>
               <li>
-                <%= link_to("Iniciar Sesión con Facebook", '/auth/facebook' , id: 'sign_in') %>
-                <%#= link_to("Iniciar Sesión con Facebook",  , id: 'sign_in') %>
+                <%#= link_to("Iniciar Sesión con Facebook", '/auth/facebook' , id: 'sign_in') %>
+                <%= link_to "Iniciar Sesión", signin_path %>
               </li>
             <% end %>
           </ul>

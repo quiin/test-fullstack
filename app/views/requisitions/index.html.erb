@@ -1,25 +1,19 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Requisitions</h1>
 
-<table>
+<table class="table table-stripped table-condensed text-center">
   <thead>
     <tr>
-      <th>Income</th>
-      <th>Address years</th>
-      <th>Company years</th>
-      <th>Marital status</th>
-      <th>Requested amount</th>
-      <th>Payment terms</th>
-      <th>Bank</th>
-      <th>Comment</th>
-      <th>Company name</th>
-      <th>Company phone number</th>
-      <th>Dependents number</th>
-      <th>Company position</th>
-      <th>Has sgmm</th>
-      <th>Has imss</th>
-      <th>Has car</th>
+      <th><%= trans(:requisition, :income) %></th>
+      <th><%= trans(:requisition, :bank) %></th>
+      <th><%= trans(:requisition, :address_years) %></th>
+      <th><%= trans(:requisition, :company_years) %></th>
+      <th><%= trans(:requisition, :marital_status) %></th>
+      <th><%= trans(:requisition, :requested_amount) %></th>
+      <th><%= trans(:requisition, :payment_terms) %></th>      
+      <th><%= trans(:requisition, :company_name) %></th>
+      <th><%= trans(:requisition, :company_phone_number) %></th>
+      <th><%= trans(:requisition, :dependents_number) %></th>
+      <th><%= trans(:requisition, :company_position) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,23 +22,18 @@
     <% @requisitions.each do |requisition| %>
       <tr>
         <td><%= requisition.income %></td>
+        <td><%= requisition.bank %></td>
         <td><%= requisition.address_years %></td>
         <td><%= requisition.company_years %></td>
         <td><%= requisition.marital_status %></td>
         <td><%= requisition.requested_amount %></td>
-        <td><%= requisition.payment_terms %></td>
-        <td><%= requisition.bank %></td>
-        <td><%= requisition.comment %></td>
+        <td><%= requisition.payment_terms %></td>        
         <td><%= requisition.company_name %></td>
         <td><%= requisition.company_phone_number %></td>
         <td><%= requisition.dependents_number %></td>
         <td><%= requisition.company_position %></td>
-        <td><%= requisition.has_sgmm %></td>
-        <td><%= requisition.has_imss %></td>
-        <td><%= requisition.has_car %></td>
-        <td><%= link_to 'Show', requisition %></td>
-        <td><%= link_to 'Edit', edit_requisition_path(requisition) %></td>
-        <td><%= link_to 'Destroy', requisition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:show), profile_requisition_path(current_profile,requisition) %></td>
+        <td><%= link_to t(:edit), edit_profile_requisition_path(current_profile, requisition) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -52,4 +41,4 @@
 
 <br>
 
-<%= link_to 'New Requisition', new_requisition_path %>
+<%= link_to t(:new_requisition), new_profile_requisition_path(current_profile) %>

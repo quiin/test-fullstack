@@ -10,12 +10,12 @@
             <%= link_to(edit_profile_path(@profile), class: 'edit-link') do%>
               <i class="glyphicon glyphicon-pencil"></i>
               <%= t(:edit) %>
-            <% end %>
+            <% end %>                  
           </span>
         </h2>
         <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <img src="http://placehold.it/380x200" alt="" class="img-rounded img-responsive" />
+          <div class="col-sm-6 col-md-4">            
+            <%= image_tag(@profile.avatar_url, class: "img-rounded img-responsive", size: "250x250") %>
           </div>
           <div class="col-sm-6 col-md-8">
             <h4>
@@ -24,8 +24,10 @@
             </h4>
             <small>
               <cite>
-                <%= @profile.birth_state %>, MEX
-                <i class="glyphicon glyphicon-map-marker"></i>
+                <% if @profile.birth_state? %>
+                  <%= @profile.birth_state %>
+                  <i class="glyphicon glyphicon-map-marker"></i>
+                <% end %>
               </cite>
             </small>
             <p>              
@@ -60,7 +62,12 @@
                   <% end %>
                 </span>                
               <% end %>
+              <br>              
             </p>
+            <%= link_to(@profile, method: :delete, data: {confirm: '¿Estás seguro?'}, class: 'remove-link pull-right pull-bottom') do%>
+                <i class="glyphicon glyphicon-remove"></i>
+                <%= t(:delete_profile) %>
+              <% end %>
           </div>
         </div>
       </div>
@@ -72,12 +79,14 @@
         <h2><%= t(:requisitions) %></h2>
         <% if @profile.requisitions.any? %>
           <div class="table-responsive">
-            <table class="table table-stripped table-condensed">
+            <table class="table table-stripped table-condensed text-center">
               
               <thead>
                 <th><%= trans(:requisition, :requested_amount) %></th>
                 <th><%= trans(:requisition, :payment_terms) %></th>
                 <th><%= trans(:requisition, :bank) %></th>
+                <th><%= trans(:requisition, :personal_reference) %></th>
+                <th colspan="2"></th>
               </thead>
 
               <tbody>
@@ -86,6 +95,9 @@
                     <td><%= number_to_currency(requisition.requested_amount) %></td>
                     <td><%= requisition.payment_terms %></td>
                     <td><%= requisition.bank %></td>
+                    <td><%= requisition.personal_references.size %></td>
+                    <td><%= link_to(t(:show), profile_requisition_path(current_profile, requisition)) %></td>
+                    <td><%= link_to(t(:edit), edit_profile_requisition_path(@profile, requisition)) %></td>
                   </tr>
                 <% end %>
               </tbody>
@@ -95,8 +107,9 @@
         <% else %>
           <div class="text-center">
             <h3>
-              <%= t(:no_requisitions) %>
+              <%= t(:no_requisitions) %>              
             </h3>
+            <%= link_to(t(:new_requisition), new_profile_requisition_path(@profile)) %>
           </div>
         <% end %>        
       </div>

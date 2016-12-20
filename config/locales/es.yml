@@ -50,6 +50,12 @@ es:
         has_sgmm: ¿Cuentas con seguro de gastos médicos?
         has_imss: ¿Cuentas con IMSS?
         has_car: ¿Tienes auto?
+      personal_reference:
+          first_name: Primer nombre
+          second_name: Segundo nombre
+          first_last_name: Apellido Paterno
+          second_last_name: Apellido Materno
+          cell_phone_number: Teléfono Celular
   date:
     abbr_day_names:
     - dom
@@ -153,7 +159,7 @@ es:
     format: "%{attribute} %{message}"
     messages:
       accepted: debe ser aceptado
-      blank: no puede estar en blanco
+      blank: Campo requerido
       present: debe estar en blanco
       confirmation: no coincide
       empty: no puede estar vacío
@@ -194,6 +200,13 @@ es:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+    label:
+      requisition[personal_reference]:
+          first_name: Primer nombre
+          second_name: Segundo nombre
+          first_last_name: Apellido Paterno
+          second_last_name: Apellido Materno
+          cell_phone_number: Teléfono Celular
   number:
     currency:
       format:
@@ -269,3 +282,6 @@ es:
   no_requisitions: No tienes solicitudes
   work_info: Información de trabajo
   requisitions: Solicitudes
+  new_requisition: Nueva solicitud
+  delete_profile: Eliminar mi perfil
+  show: Ver

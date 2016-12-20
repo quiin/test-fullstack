@@ -1,5 +1,18 @@
-<%= bootstrap_form_for([@profile, @requisition]) do |f| %>
-  
+<%= bootstrap_nested_form_for([@profile, @requisition]) do |f| %>
+  <% @form = f %>
+  <% if @requisition.errors.any? and @requisition.errors.messages[:base]  %>
+    <div class="alert alert-warning alert-dismissible">      
+      <ul>
+        <% @requisition.errors.messages.each do |message| %>
+          <% if message[0] == :base %>
+            <li><%= message[1][0] %></li>          
+          <% end %>
+        <% end %>
+      </ul>      
+    </div>
+  <% end %>
+
+
   <div class="row">
     <!-- personal info -->
     <div class="col-xs-12 col-sm-6 col-md-4">
@@ -34,10 +47,60 @@
         <%= f.text_area :comment %>               
       </div>
     </div>
-  </div>    
-  
+  </div>
+
+  <h2>
+    Referencias        
+    <%= link_to_add_fields "Agregar", f, :personal_references %>    
+  </h2>
+  <div id="reference-container">     
+    <%= f.fields_for :personal_references do |builder|%>     
+      <%= render 'personal_reference_fields', f: builder %>
+    <% end %>  
+  </div>
+
+
+
   <div class="col-xs-12">
     <%= f.submit class: 'btn btn-success btn-block'%>
-  </div>  
+  </div> 
   
 <% end %>
+
+
+
+<script type="text/javascript">
+  function remove_fields(link) {
+    $(link).nextAll("input[type=hidden]")[0].value = "true";
+    console.log($(link).nextAll("input[type=hidden]")[0])
+    $(link).closest(".fields-to-remove").hide();
+  }
+
+  function add_fields(link, association, content) {
+    var new_id = new Date().getTime();
+    var regexp = new RegExp("new_" + association, "g")    
+    $(link).parent().after(content.replace(regexp, new_id));
+    ready();  
+  }
+
+  function ready(){
+    $(".remove-link").unbind();
+    $(".link_to_add_fields").unbind();
+
+    $(".remove-link").click((e) =>{      
+      var link = e.target;
+      remove_fields(link)   
+    });
+
+    $(".link_to_add_fields").click((e) =>{
+      e.preventDefault();
+      var link = $(e.target);      
+      var association = link.data("association");
+      var content = link.data("content");      
+      add_fields(link, association, content);
+    })
+  }
+
+
+  $(() => {ready();});
+</script>

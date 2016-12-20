@@ -17,7 +17,29 @@ h1{
 	margin-right: 4px;
   width: 150px;
   height: 80px;
+}
 
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.remove-link:hover :visited{  
+  font-size: 20px;
+  color: red;
+  text-decoration: none;
+}
+
+.remove-link:link{
+  padding-left: 20px;
+  font-size: 20px;
+  color: red;
+  text-decoration: none;
+}
+
+.container{
+  margin-bottom: 50px;
 }
 
 h2{
@@ -25,6 +47,13 @@ h2{
 	margin-bottom: 10px;
 	margin-top: 1px;
 	color: #16a085;
+}
+
+h2 i{
+  padding-left: 20px;
+  font-size: 20px;
+  color: #27ae60;
+  text-decoration: none;  
 }
 
 .simple-box{
@@ -36,6 +65,38 @@ h2{
   -moz-box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
   box-shadow: -15px 10px 17px -4px rgba(204,204,204,1);
 	
+}
+
+[class*='close-'] {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+}
+
+.close-classic:after {
+  content: 'X'; /* ANSI X letter */
+}
+
+.close-thin:after {
+  content: '×'; /* UTF-8 symbol */
+}
+
+.close-thik:after {
+  content: '✖'; /* UTF-8 symbol */
+}
+
+/* Dialog */
+
+.well {
+  position: relative;  
+}
+
+a{
+
 }
 
 .blue-b{
@@ -66,10 +127,17 @@ h2{
   color: #e74c3c;
 }
 
-.edit-link:hover, :link, :visited{
+.edit-link:hover :visited{
   padding-left: 20px;
   font-size: 20px;
 	color: #27ae60;
+  text-decoration: none;
+}
+
+.edit-link:link{
+  padding-left: 20px;
+  font-size: 20px;
+  color: #27ae60;
   text-decoration: none;
 }
 

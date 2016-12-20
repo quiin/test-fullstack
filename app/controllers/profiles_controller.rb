@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, only:[:show, :edit, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
@@ -19,6 +20,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    @profile.valid?
   end
 
   # POST /profiles
@@ -54,9 +56,10 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
+    reset_session
     @profile.destroy
     respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Perfil eliminado' }
+      format.html { redirect_to root_path, notice: 'Perfil eliminado' }
       format.json { head :no_content }
     end
   end
@@ -70,5 +73,12 @@ class ProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
       params.require(:profile).permit(:first_name, :second_name, :first_last_name, :second_last_name, :birth_date, :curp, :rfc, :gender, :birth_state, :phone_number)
+    end
+
+    def authenticate
+      if current_profile.id != @profile.id
+        flash[:error] = "No tienes permiso para acceder"
+        redirect_to root_path
+      end        
     end
 end
