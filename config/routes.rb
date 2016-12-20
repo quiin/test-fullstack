@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
 
-  root 'sessions#new'
+  root 'sessions#index'
 end
