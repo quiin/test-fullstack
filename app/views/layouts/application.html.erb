@@ -35,7 +35,7 @@
               <li><%= link_to("Cerrar sesión", signout_path, id: 'sign_out')%></li>
             <% else %>
               <li>                
-                <%= link_to "Iniciar Sesión", signin_path %>
+                <%= link_to t(:signin), signin_path %>
               </li>
             <% end %>
           </ul>

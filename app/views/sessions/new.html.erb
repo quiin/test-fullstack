@@ -5,10 +5,16 @@
     <%= f.password_field :password, label: "Contraseña", icon: "lock" %>
 
     <div class="col-sm-12 text-center">
-      <%= f.submit 'Iniciar sesión' ,class: "btn btn-success btn-lg"%>
-      <%= link_to('/auth/facebook' , id: 'sign_in', class: 'btn btn-lg btn-social btn-facebook') do%>
-        <span class="fa fa-facebook"></span> Sign in with Facebook
-      <% end %>
+      
+      <div style="padding: 10px">
+        <%= f.submit t(:signin) ,class: "btn btn-success btn-lg"%>      
+      </div>
+
+      <div style="padding: 10px">
+        <%= link_to('/auth/facebook' , id: 'sign_in', class: 'btn btn-lg btn-social btn-facebook') do%>
+          <span class="fa fa-facebook"></span> <%= t(:signin_with_facebook) %>
+        <% end %>
+      </div>        
 
       <div class="row" style="padding: 40px;">
         <%= link_to(t(:new_profile) ,new_profile_path, class: 'btn btn-lg btn-primary') %>
