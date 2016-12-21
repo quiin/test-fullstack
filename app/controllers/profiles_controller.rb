@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate, only:[:show, :edit, :update, :destroy]
+  skip_before_action :ensure_login, only: [:new, :create]
 
   # GET /profiles
   # GET /profiles.json
@@ -30,7 +31,10 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Perfil creado con éxito' }
+        format.html do
+          session[:profile_id] = @profile.id
+          redirect_to @profile, notice: 'Perfil creado con éxito'
+        end
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -72,7 +76,10 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:first_name, :second_name, :first_last_name, :second_last_name, :birth_date, :curp, :rfc, :gender, :birth_state, :phone_number)
+      params.require(:profile).permit(:first_name, :second_name, 
+        :first_last_name, :second_last_name, 
+        :birth_date, :curp, :rfc, :gender, :birth_state,
+        :email, :phone_number, :password, :password_confirmation)
     end
 
     def authenticate

@@ -257,3 +257,182 @@ a{
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
 }
+
+.icon{
+  width: 80px;
+  margin-bottom: 20px;
+  margin-left: 100px;  
+}
+
+p {
+  line-height: 1.6em;
+  margin: 0 0 30px 0;
+}
+
+p.big-p{  
+  font-size: 15px;
+  /*font-size: 0.9375rem;*/
+  font-family: "Open sans", Helvetica, Arial, sans-serif;
+}
+
+h8 {
+  font-size: 35px;
+}
+
+
+
+/********** TEMPLATE CSS START *****************************/
+img {
+  max-width: 100%;
+}
+.panel-cta {
+  box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
+  background: #f3f3f3;
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
+  border-radius: 0;
+  background-clip: padding-box;
+}
+.panel-cta p,
+.panel-cta h3,
+.panel-cta h4,
+.panel-cta h5,
+.panel-cta h6 {
+  margin: 0;
+}
+.panel-cta .panel-body {
+  padding: 35px;
+}
+/* Section - Featured */
+.featured {
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.featured h3 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.4em;
+  vertical-align: middle;
+  margin: 0 0 25px 0;
+}
+/* Section - Recent works */
+.thumbnails {
+  padding: 0;
+}
+.thumbnails li {
+  margin-bottom: 30px;
+}
+.thumbnails .details {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+.thumbnail {
+  display: block;
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
+  border-radius: 0;
+  background-clip: padding-box;
+  border: 0 none;
+  margin-bottom: 10px;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+.thumbnail .img {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  height: 180px;
+  margin: 0 0 20px;
+  position: relative;
+}
+.thumbnail .title {
+  text-transform: uppercase;
+  margin: 0 2em;
+  display: block;
+  text-indent: 0;
+}
+.thumbnail .cover {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 550ms;
+  -moz-transition-duration: 550ms;
+  -o-transition-duration: 550ms;
+  transition-duration: 550ms;
+}
+.thumbnail .cover .more {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 20px;
+  -webkit-border-radius: 1px 0 0 1px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 1px 0 0 1px;
+  -moz-background-clip: padding;
+  border-radius: 1px 0 0 1px;
+  background-clip: padding-box;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0px #780d33;
+  background: #bd1550;
+  color: white;
+}
+.thumbnail img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.thumbnail:hover {
+  color: #333;
+  text-decoration: none;
+}
+.thumbnail:hover img {
+  -webkit-filter: saturate(0%);
+}
+.thumbnail:hover .cover {
+  opacity: 1;
+}
+/* pagination */
+.pagination > li > a {
+  color: #808080;
+  border: 0 none;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-family: Georgia, serif;
+}
+.pagination > li > a:hover {
+  color: #000000;
+  background: none;
+}
+.pagination > li.active > a {
+  color: #333333;
+  background: none;
+}
+.pagination > li.active > a:hover {
+  color: #000000;
+  background: none;
+}
+/***********************************************************/

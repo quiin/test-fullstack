@@ -1,9 +1,18 @@
 class Profile < ActiveRecord::Base
   has_many :requisitions, dependent: :destroy
   has_secure_password
-  validates :first_name, :first_last_name, :rfc, :curp, :second_last_name, :email, :birth_date, :gender, :birth_state, :phone_number, presence: true
-  validates :rfc, format: { with: /\A[A-ZÑ&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9]([A-Z0-9]{3})?\z/i, message: :invalid_rfc }
-  validates :curp, format: { with: /\A[A-Z][AEIOUX][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][MH][A-Z][BCDFGHJKLMNÑPQRSTVWXYZ]{4}[0-9A-Z][0-9]\z/, message: :invalid_curp }
+  validates :first_name, presence: true
+  validates :first_last_name, presence: true
+  validates :second_last_name, presence: true
+  # validates :rfc, presence: true
+  # validates :curp, presence: true
+  # validates :email, presence: true
+  # validates :birth_date, 
+  # validates :gender, presence: true
+  # validates :birth_state, presence: true
+  # validates :phone_number, presence: true
+  validates :rfc, format: { with: /\A[A-ZÑ&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9]([A-Z0-9]{3})?\z/i, message: :invalid_rfc },  if: :rfc_changed?
+  validates :curp, format: { with: /\A[A-Z][AEIOUX][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][MH][A-Z][BCDFGHJKLMNÑPQRSTVWXYZ]{4}[0-9A-Z][0-9]\z/, message: :invalid_curp }, if: :curp_changed?
   before_save :set_defaults
 
   STATES = ["Aguascalientes", "Baja California", "Baja California Sur", "Campeche", 

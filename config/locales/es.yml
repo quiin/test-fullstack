@@ -34,6 +34,8 @@ es:
         gender: Sexo
         birth_state: Lugar de nacimiento 
         phone_number: Teléfono
+        password: Contraseña
+        password_confirmation: Confirma tu contraseña
       requisition:
         income: Ingreso
         address_years: Años en tu domicilio
@@ -161,7 +163,7 @@ es:
       accepted: debe ser aceptado
       blank: Campo requerido
       present: debe estar en blanco
-      confirmation: no coincide
+      confirmation: No coincide
       empty: no puede estar vacío
       equal_to: debe ser igual a %{count}
       even: debe ser par
@@ -285,3 +287,6 @@ es:
   new_requisition: Nueva solicitud
   delete_profile: Eliminar mi perfil
   show: Ver
+  new_profile: Nuevo Perfil
+  editing_profile: Editando Perfil
+  editing_requisition: Editando Solicitud

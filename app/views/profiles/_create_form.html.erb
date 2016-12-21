@@ -1,0 +1,17 @@
+<div class="row">
+  <%= bootstrap_form_for(@profile) do |f| %>  
+
+    <%= f.text_field :first_name, placeholder: 'Ricardo', id: :first_name%>
+    <%= f.text_field :second_name, placeholder: 'Emanuel', id: :second_name%>
+    <%= f.text_field :first_last_name, placeholder: 'Nieves', id: :first_last_name%>
+    <%= f.text_field :second_last_name, placeholder: 'Reyes', id: :second_last_name%>    
+    
+    <%= f.email_field :email, placeholder: 'ricardo.nieves@ejemplo.com', id: :email%>
+
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+        
+    <%= f.submit class: 'btn btn-success'%>    
+    
+  <% end %>
+</div>

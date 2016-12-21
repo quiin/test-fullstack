@@ -1,1 +1,44 @@
+<div class="row section topspace">
+	<div class="col-md-12">
+		<h1>¿Cómo funciona?</h1>
+		<p class="lead text-center text-muted">
+			Conectamos directamente a personas que necesitan un préstamo con personas que quieren invertir su dinero. De esta manera logramos que el que pide prestado pague menos intereses y que el que invierte su dinero gane buenos rendimientos.
+		</p>
+	</div>
+</div> <!-- / section -->
 
+<div class="row section featured topspace">
+	<h2 class="section-title"><span>Servicios</span></h2>
+	<div class="row">
+		<div class="col-sm-6 col-md-3">
+			<h3 class="text-center">La tasa más baja</h3>
+			<%= image_tag("https://assets.testingytp.com/img/icog-ac-6.svg", class: 'icon') %>
+			<p class="big-p">Te ofrecemos la mejor tasa para tu préstamo</p>			
+		</div>
+		<div class="col-sm-6 col-md-3">
+			<h3 class="text-center">Pagos Fijos</h3>
+			<%= image_tag("https://assets.testingytp.com/img/icog-ac-4.svg", class: 'icon') %>
+			<p class="big-p">Tú escoges el esquema de pagos que mejor se acomode a tus necesidades</p>	
+		</div>
+		<div class="col-sm-6 col-md-3">
+			<h3 class="text-center">Sin enganche</h3>
+			<%= image_tag("https://assets.testingytp.com/img/icog-ac-5.svg", class: 'icon') %>
+			<p class="big-p">No necesitas dar ninguna cantidad para empezar. Solo solicita tu préstamo y nosotros hacemos el resto.</p>
+		</div>
+		<div class="col-sm-6 col-md-3">
+			<h3 class="text-center">Sin garantías ni avales</h3>
+			<%= image_tag("https://assets.testingytp.com/img/icog-ac-1.svg", class: 'icon') %>
+			<p class="big-p">No necesitas dar ninguna garantía ni aval para comenzar.</p>			
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row section topspace text-center">
+	<% unless current_profile %>
+		<%= link_to("Comenzar", signin_path, class: 'btn btn-primary btn-lg' ) %>
+	<% else %>
+		<%= link_to("Comenzar", new_profile_requisition_path(current_profile), class: 'btn btn-primary btn-lg' ) %>
+	<% end %>
+</div>
