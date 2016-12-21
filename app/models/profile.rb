@@ -5,7 +5,7 @@ class Profile < ActiveRecord::Base
   validates :first_last_name, presence: true, length: {minimum: 3}
   validates :second_last_name, presence: true, length: {minimum: 3}
   validates :gender, presence: true, if: :gender_changed?  
-  validates :phone_number, length: {minimum: 6}
+  validates :phone_number, length: {minimum: 6}, if: :phone_number_changed?
   # validates :phone_number, presence: true
   validates :rfc, format: { with: /\A[A-ZÑ&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9]([A-Z0-9]{3})?\z/i, message: :invalid_rfc },  if: :rfc_verify?
   validates :curp, format: { with: /\A[A-Z][AEIOUX][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][MH][A-Z][BCDFGHJKLMNÑPQRSTVWXYZ]{4}[0-9A-Z][0-9]\z/, message: :invalid_curp }, if: :curp_verify?
