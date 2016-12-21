@@ -1,5 +1,4 @@
-<%= bootstrap_nested_form_for([@profile, @requisition]) do |f| %>
-  <% @form = f %>
+<%= bootstrap_nested_form_for([@profile, @requisition]) do |f| %>  
   <% if @requisition.errors.any? and @requisition.errors.messages[:base]  %>
     <div class="alert alert-warning alert-dismissible">      
       <ul>

@@ -1,15 +1,11 @@
 class Profile < ActiveRecord::Base
-  has_many :requisitions, dependent: :destroy
   has_secure_password
-  validates :first_name, presence: true
-  validates :first_last_name, presence: true
-  validates :second_last_name, presence: true
-  # validates :rfc, presence: true
-  # validates :curp, presence: true
-  # validates :email, presence: true
-  # validates :birth_date, 
-  validates :gender, presence: true, if: :gender_changed?
-  # validates :birth_state, presence: true
+  has_many :requisitions, dependent: :destroy
+  validates :first_name, presence: true, length: {minimum: 3}
+  validates :first_last_name, presence: true, length: {minimum: 3}
+  validates :second_last_name, presence: true, length: {minimum: 3}
+  validates :gender, presence: true, if: :gender_changed?  
+  validates :phone_number, length: {minimum: 6}
   # validates :phone_number, presence: true
   validates :rfc, format: { with: /\A[A-ZÑ&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9]([A-Z0-9]{3})?\z/i, message: :invalid_rfc },  if: :rfc_verify?
   validates :curp, format: { with: /\A[A-Z][AEIOUX][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][MH][A-Z][BCDFGHJKLMNÑPQRSTVWXYZ]{4}[0-9A-Z][0-9]\z/, message: :invalid_curp }, if: :curp_verify?
@@ -42,6 +38,7 @@ class Profile < ActiveRecord::Base
     profile.gender = auth.extra.raw_info.gender
     profile.email = auth.extra.raw_info.email
     profile.avatar_url = auth.info.image
+    profile.password = "kek"
     profile.save!(validate: false)
     ap profile
     profile
@@ -65,7 +62,7 @@ class Profile < ActiveRecord::Base
   end
 
   def set_defaults
-    self.avatar_url ||= Profile::DEFAULT_URL
+    self.avatar_url ||= Profile::DEFAULT_URL    
   end
 
   def rfc_verify?
