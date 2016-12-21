@@ -10,7 +10,7 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 - Ruby  v2.2.1
 - Rails v4.2.6
 - Ubuntu Xenial 16.04
-- Deployed in Heroku: https://goo.gl/cwRkbF
+- Deployed in Heroku: https://goo.gl/DUs8QW
 - Database used
 	- Local: sqlite3
 	- Production: Postgress
