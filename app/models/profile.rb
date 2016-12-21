@@ -8,11 +8,11 @@ class Profile < ActiveRecord::Base
   # validates :curp, presence: true
   # validates :email, presence: true
   # validates :birth_date, 
-  # validates :gender, presence: true
+  validates :gender, presence: true, if: :gender_changed?
   # validates :birth_state, presence: true
   # validates :phone_number, presence: true
-  validates :rfc, format: { with: /\A[A-ZÑ&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9]([A-Z0-9]{3})?\z/i, message: :invalid_rfc },  if: :rfc_changed?
-  validates :curp, format: { with: /\A[A-Z][AEIOUX][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][MH][A-Z][BCDFGHJKLMNÑPQRSTVWXYZ]{4}[0-9A-Z][0-9]\z/, message: :invalid_curp }, if: :curp_changed?
+  validates :rfc, format: { with: /\A[A-ZÑ&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9]([A-Z0-9]{3})?\z/i, message: :invalid_rfc },  if: :rfc_verify?
+  validates :curp, format: { with: /\A[A-Z][AEIOUX][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][MH][A-Z][BCDFGHJKLMNÑPQRSTVWXYZ]{4}[0-9A-Z][0-9]\z/, message: :invalid_curp }, if: :curp_verify?
   before_save :set_defaults
 
   STATES = ["Aguascalientes", "Baja California", "Baja California Sur", "Campeche", 
@@ -66,6 +66,15 @@ class Profile < ActiveRecord::Base
 
   def set_defaults
     self.avatar_url ||= Profile::DEFAULT_URL
+  end
+
+  def rfc_verify?
+    rfc.nil? ? false : !rfc.empty?
+  end
+
+  #Returns true if curp has empty string
+  def curp_verify?
+     curp.nil? ? false : !curp.empty?
   end
   
 

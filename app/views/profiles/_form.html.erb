@@ -12,7 +12,7 @@
 
     <!-- Gender section -->
     <%= f.form_group :gender, label: {text: t(:"activerecord.models.profile")} do %>
-      <%= f.radio_button :gender, :male, label: t(:male)%>  
+      <%= f.radio_button :gender, :male, label: t(:male), checked: (@profile.gender.nil?)%>  
       <%= f.radio_button :gender, :female, label: t(:female)%>
     <% end %>
 
