@@ -10,7 +10,7 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 - Ruby  v2.2.1
 - Rails v4.2.6
 - Ubuntu Xenial 16.04
-- Deployed in Heroku: [https://goo.gl/cwRkbF](#link)
+- Deployed in Heroku: (https://goo.gl/cwRkbF)
 - Database used
 	- Local: sqlite3
 	- Production: Postgress
@@ -52,4 +52,3 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 #### <i class="icon-user"></i> Entity Relationship Diagram
 
 ![alt text](https://i.imgur.com/CBVq1kB.png "E-R diagram")
-
