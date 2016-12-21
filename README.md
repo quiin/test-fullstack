@@ -45,6 +45,7 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 	+ No unregistered users are allowed
 	+ Users can only access their own information
 	+ Passwords are hashed securely
+	+ Use SSL and secure cookies
 + Login
 	+ Via facebook
 	+ Via account creation
