@@ -48,6 +48,9 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 + Login
 	+ Via facebook
 	+ Via account creation
++ Dynamic user inputs
+	+ Money input fields formatted as the user types
+	+ Cellphone fields are formatted with a phone format template
 
 #### <i class="icon-user"></i> Entity Relationship Diagram
 
