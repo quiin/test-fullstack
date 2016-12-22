@@ -1,9 +1,9 @@
 <div class="col-xs-12 col-md-4 well fields-to-remove">
-  <a class="close-thik edit-link remove-link"></a>   
-	<%= f.text_field :first_name %>  
-	<%= f.text_field :second_name %>
-	<%= f.text_field :first_last_name %>
-	<%= f.text_field :second_last_name %>
-	<%= f.text_field :cell_phone_number, data: {role: 'phone'} %> 
+  <a class="close-thik edit-link remove-link"></a>  
+	<%= f.text_field :first_name, placeholder: 'Ricardo' %>  
+	<%= f.text_field :second_name, placeholder: 'Emanuel' %>
+	<%= f.text_field :first_last_name, placeholder:  'Nieves'%>
+	<%= f.text_field :second_last_name, placeholder:  'Reyes'%>
+	<%= f.text_field :cell_phone_number, data: {role: 'phone'}, placeholder: '551234567890 ext 99999' %>
 	<%= f.hidden_field :_destroy , class: 'remove-hidden'%>
 </div>

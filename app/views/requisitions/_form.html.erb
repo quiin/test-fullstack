@@ -17,10 +17,10 @@
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="simple-box red-b">
         <h2><%= t(:personal_info) %></h2>
-        <%= f.text_field :income, data: { role: 'money' } %>
-        <%= f.number_field :address_years, min: 0 %>
+        <%= f.text_field :income, data: { role: 'money' }, placeholder: '$15\'000' %>
+        <%= f.number_field :address_years, min: 0, placeholder: 5 %>
         <%= f.select :marital_status, Requisition::MARITAL_STATES %>
-        <%= f.number_field :dependents_number, min: 0 %>
+        <%= f.number_field :dependents_number, min: 0, placeholder: 2 %>
         <%= f.check_box :has_sgmm %>
         <%= f.check_box :has_imss %>
         <%= f.check_box :has_car %>  
@@ -30,20 +30,20 @@
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="simple-box blue-b">
         <h2><%= t(:work_info) %></h2>
-        <%= f.number_field :company_years, min: 0 %>
-        <%= f.text_field :company_name %>    
-        <%= f.text_field :company_phone_number, data: {role: 'phone'} %>      
-        <%= f.text_field :company_position %>              
+        <%= f.number_field :company_years, min: 0, placeholder: 10 %>
+        <%= f.text_field :company_name, placeholder: 'Yo te presto'%>    
+        <%= f.text_field :company_phone_number, data: {role: 'phone'}, placeholder: '551234567890 ext 99999'%>
+        <%= f.text_field :company_position, placeholder: 'Genrente R.H.'%>              
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-4">
       <div class="simple-box orane-b">
         <h2><%= t(:requisition) %></h2>
-        <%= f.text_field :requested_amount, data: { role: 'money' } %>
+        <%= f.text_field :requested_amount, data: { role: 'money' }, placeholder: '$500\'000' %>
         <%= f.select :payment_terms, Requisition::TERMS %>
-        <%= f.text_field :bank %>
-        <%= f.text_area :comment %>               
+        <%= f.text_field :bank, placeholder: 'Banamex' %>
+        <%= f.text_area :comment, placeholder: 'Dejanos algún comentario' %>               
       </div>
     </div>
   </div>
