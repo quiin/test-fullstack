@@ -19,6 +19,19 @@ h1{
   height: 80px;
 }
 
+.form-control::-webkit-input-placeholder { 
+  color: #C8C8C8;  
+ }
+.form-control:-moz-placeholder { 
+  color: #C8C8C8;  
+ }
+.form-control::-moz-placeholder {
+  color: #C8C8C8;  
+}
+.form-control:-ms-input-placeholder { 
+  color: #C8C8C8;  
+ }
+
 .vcenter {
   display: inline-block;
   vertical-align: middle;
