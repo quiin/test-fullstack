@@ -16,10 +16,6 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 	- Local: sqlite3
 	- Production: Postgress
 
-### <i class="icon-sitemap"></i> Folder structure
-
-
-
 
 ### <i class="icon-globe"></i> Requirements
 
