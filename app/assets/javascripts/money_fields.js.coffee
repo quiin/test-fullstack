@@ -1,6 +1,6 @@
 ready = ->
 	$('input[data-role=money]').autoNumeric('init', 
-  	aSep: '\'',
+  	aSep: ',',
   	aDec: '.',
   	aSign: '$'
 	);

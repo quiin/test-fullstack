@@ -58,12 +58,23 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'web-console', '~> 2.0', group: :development
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'web-console', '~> 2.0' 
+  gem 'byebug'  
   gem 'spring'
   gem 'sqlite3'
+  gem 'rspec-rails'  
+  gem 'rspec-collection_matchers'
+  gem 'capybara', '~> 2.5'
+  gem 'factory_girl_rails'
+  gem 'faker', '~> 1.6.1'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'  
 end
 
 group :production do

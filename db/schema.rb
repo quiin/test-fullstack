@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20161214075905) do
   end
 
   create_table "requisitions", force: :cascade do |t|
-    t.integer  "income_cents"
+    t.integer  "income_cents",           limit: 10
     t.integer  "address_years"
     t.string   "marital_status"
     t.string   "dependents_number"
@@ -60,13 +60,13 @@ ActiveRecord::Schema.define(version: 20161214075905) do
     t.string   "company_name"
     t.string   "company_phone_number"
     t.string   "company_position"
-    t.integer  "requested_amount_cents"
+    t.integer  "requested_amount_cents", limit: 10
     t.string   "payment_terms"
     t.string   "bank"
     t.text     "comment"
     t.integer  "profile_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   add_index "requisitions", ["profile_id"], name: "index_requisitions_on_profile_id"

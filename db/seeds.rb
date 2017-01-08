@@ -1,6 +1,6 @@
-PersonalReference.delete_all
-Requisition.delete_all
-Profile.delete_all
+PersonalReference.destroy_all
+Requisition.destroy_all
+Profile.destroy_all
 
 profile = Profile.new
 profile.first_name = 'Juan'
@@ -17,3 +17,13 @@ profile.email = "admin@admin.com"
 profile.password = "password"
 
 profile.save!(validate: false)
+
+Requisition::MIN_REFERENCES.times do
+	FactoryGirl.create(:personal_reference)
+end
+
+requisition = FactoryGirl.build(:requisition)
+requisition.personal_references = PersonalReference.all
+requisition.profile = profile
+requisition.save!
+

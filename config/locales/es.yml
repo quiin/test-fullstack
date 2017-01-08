@@ -52,6 +52,7 @@ es:
         has_sgmm: ¿Cuentas con seguro de gastos médicos?
         has_imss: ¿Cuentas con IMSS?
         has_car: ¿Tienes auto?
+        personal_reference: Referencias
       personal_reference:
           first_name: Primer nombre
           second_name: Segundo nombre

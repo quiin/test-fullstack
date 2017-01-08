@@ -29,6 +29,7 @@ MoneyRails.configure do |config|
                            postfix: '_cents',    # column name  postfix
                            column_name: nil,     # full column name (overrides prefix, postfix and accessor name)
                            type: :integer,       # column type
+                           limit: 10,
                            present: true,        # column will be created
                            null: true,          # other options will be treated as column options
                            default: nil

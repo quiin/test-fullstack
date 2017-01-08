@@ -12,6 +12,7 @@ class Requisition < ActiveRecord::Base
 	validates :requested_amount, presence: true
 	validates :bank	, presence: true
 	validate :require_minimum_references
+	validate :profile_completed
 	monetize :income_cents, as: :income, allow_nil: true, numericality:{greater_than: 0}
 	monetize :requested_amount_cents, as: :requested_amount, allow_nil: true, numericality:{greater_than: 0}
 
@@ -45,14 +46,16 @@ class Requisition < ActiveRecord::Base
 	end
 
 	private
-		def require_minimum_references
-			puts "------------"
-			puts personal_references.size
-			ap personal_references.size
-			puts "------------"
+		def require_minimum_references						
 			if personal_references.size < MIN_REFERENCES
 				errors.add(:base, "Se requiere un mínimo de 3 referencias") 
 			end
+		end
+
+		def profile_completed
+			if profile.nil? or !profile.is_complete?
+				errors.add(:base, "Es necesario compeltar tu perfil") 
+			end			
 		end
 
 end
