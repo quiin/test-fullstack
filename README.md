@@ -18,22 +18,7 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 
 ### <i class="icon-sitemap"></i> Folder structure
 
-├── ***app***
-│   ├── **assets** - javascript/coffeescript/css/image files
-│   ├── **controllers** -  application controllers
-│   ├── **helpers** - application helpers
-│   ├── **models** - application models
-│   └── **views** - html templaste and partials
-├── ***config***
-│   ├── **environments** - application config files like money.rb
-│   └── **locales** - application locales (using es.yml)
-├── ***db***
-│   └── **migrate** - database internal structure migrations
-├── ***spec***
-│   ├── **factories** - Model factories
-│   ├── **models** - Model specific tests
-│   └── **support** - Test support files & helpers
-└── ***test*** - Auto generated tests
+
 
 
 ### <i class="icon-globe"></i> Requirements
