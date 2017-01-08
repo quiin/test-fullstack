@@ -6,7 +6,7 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 ----------
 
 
-####<i class="icon-cog"></i> Specifications
+###<i class="icon-cog"></i> Specifications
 
 - Ruby  v2.2.1
 - Rails v4.2.6
@@ -16,8 +16,27 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 	- Local: sqlite3
 	- Production: Postgress
 
+### <i class="icon-sitemap"></i> Folder structure
 
-#### <i class="icon-globe"></i> Requirements
+├── ***app***
+│   ├── **assets** - javascript/coffeescript/css/image files
+│   ├── **controllers** -  application controllers
+│   ├── **helpers** - application helpers
+│   ├── **models** - application models
+│   └── **views** - html templaste and partials
+├── ***config***
+│   ├── **environments** - application config files like money.rb
+│   └── **locales** - application locales (using es.yml)
+├── ***db***
+│   └── **migrate** - database internal structure migrations
+├── ***spec***
+│   ├── **factories** - Model factories
+│   ├── **models** - Model specific tests
+│   └── **support** - Test support files & helpers
+└── ***test*** - Auto generated tests
+
+
+### <i class="icon-globe"></i> Requirements
 
 + Users can sign in to the application, complete their profile and submit a requisition
 + User authentication with Facebook
@@ -30,12 +49,12 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 + In order to create a requisition, the user's profile must be completed
 + Each requisition must have at least 3 obligatory personal references (added dynamically)
 
-#### <i class="icon-bell"></i> Considerations
+### <i class="icon-bell"></i> Considerations
 
 + Form fields must be validated
 + Design & UX is free
 
-#### <i class="icon-star"></i> Features
+### <i class="icon-star"></i> Features
 + Internationalization
 	+ App will detect the browser language and show text in the expected language
 	+ Can easilly increase the scope to more languages and locales
@@ -55,7 +74,7 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 	+ Money input fields formatted as the user types
 	+ Cellphone fields are formatted with a phone format template
 
-#### <i class="icon-laptop"></i> Tests
+### <i class="icon-laptop"></i> Tests
 
 The following gems where used as auxiliary helpers to ease testing writing:
 
@@ -94,6 +113,6 @@ To run a specific test individualy run
 
     rspec /path/to/_spec_file.rb
 
-#### <i class="icon-user"></i><a name="er-diagram"> Entity Relationship Diagram</a>
+### <i class="icon-user"></i><a name="er-diagram"> Entity Relationship Diagram</a>
 
 ![alt text](https://i.imgur.com/CBVq1kB.png "E-R diagram")
