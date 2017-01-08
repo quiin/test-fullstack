@@ -7,6 +7,7 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 
 
 ###<i class="icon-cog"></i> Specifications
+
 - Ruby  v2.2.1
 - Rails v4.2.6
 - Ubuntu Xenial 16.04
@@ -16,6 +17,7 @@ This project was created as a Full-Stack **Ruby on Rails** skill test.
 	- Production: Postgress
 
 ### <i class="icon-sitemap"></i> Folder structure
+
 ├── ***app***
 │   ├── **assets** - javascript/coffeescript/css/image files
 │   ├── **controllers** -  application controllers
